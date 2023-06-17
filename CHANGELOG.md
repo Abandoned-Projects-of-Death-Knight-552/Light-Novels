@@ -1,3 +1,7 @@
 ## Changes
 
-- Currently, nothing.
+- Added Screens
+  - Dashboard
+  - Library
+  - Browse
+  

@@ -3,23 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/nav_dashboard">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.knightshrestha.lightnovels.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
-
+        android:id="@+id/nav_browse"
+        android:name="com.knightshrestha.lightnovels.ui.browse.BrowseFragment"
+        android:label="Browse Library"
+        tools:layout="@layout/fragment_browse" />
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.knightshrestha.lightnovels.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
+        android:id="@+id/nav_library"
+        android:name="com.knightshrestha.lightnovels.ui.mainlist.MainlistFragment"
+        android:label="Library"
+        tools:layout="@layout/fragment_mainlist" />
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.knightshrestha.lightnovels.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_dashboard"
+        android:name="com.knightshrestha.lightnovels.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
 </navigation>
