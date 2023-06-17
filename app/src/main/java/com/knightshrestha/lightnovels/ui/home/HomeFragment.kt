@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.knightshrestha.lightnovels.database.ViewModel
 import com.knightshrestha.lightnovels.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -27,6 +28,12 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        val vm = ViewModelProvider(this)[ViewModel::class.java]
+
+        vm.allBooks.observe(viewLifecycleOwner) {
+            println("Observed")
+        }
 
         val textView: TextView = binding.textHome
         homeViewModel.text.observe(viewLifecycleOwner) {
