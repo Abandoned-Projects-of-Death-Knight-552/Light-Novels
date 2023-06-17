@@ -59,7 +59,7 @@ jobs:
         uses: timheuer/base64-to-file@v1.2
         with:
           fileName: "android_keystore.jks"
-          fileDir: "/home/runner/work/Neon-Novels/Neon-Novels/app/keystore/"
+          fileDir: "/home/runner/work/Light-Novels/Light-Novels/app/keystore/"
           encodedString: ${{ secrets.KEYSTORE }}
 
       # Build and sign APK ("-x test" argument is used to skip tests)
@@ -82,7 +82,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.2
         with:
           name: Neon Novels
-          path: "app/build/outputs/apk/release/Neon\ Novels_v${{ needs.auto.outputs.version }}.apk"
+          path: "app/build/outputs/apk/release/Light\ Novels_v${{ needs.auto.outputs.version }}.apk"
 
   release:
     name: Release APK
@@ -99,7 +99,7 @@ jobs:
       - name: Download APK from build
         uses: actions/download-artifact@v1
         with:
-          name: Neon Novels
+          name: Light Novels
 
       - name: Create Release
         id: create_release
@@ -113,4 +113,4 @@ jobs:
           body_path: ${{ github.workspace }}/CHANGELOG.md
           draft: true
           prerelease: false
-          files: Neon Novels/Neon Novels_v${{needs.run_job.outputs.version }}.apk
+          files: Light Novels/Light Novels_v${{needs.run_job.outputs.version }}.apk
