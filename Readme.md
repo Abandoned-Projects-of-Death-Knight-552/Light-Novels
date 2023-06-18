@@ -14,11 +14,11 @@ You can add new novels to reading list, track status and maybe see recommendatio
 
 | Build | Download | Discord Server |
 |-------|----------|----------|
-| [![CI](https://github.com/Death-Knight-552/Light-Novels/actions/workflows/auto.yml/badge.svg)](https://github.com/Death-Knight-552/Light-Novels/actions/workflows/auto.yml) | [![stable release](https://img.shields.io/github/release/Death-Knight-552/Light-Novels.svg?maxAge=3600&label=download)](https://github.com/Death-Knight-552/Light-Novels/releases) | [![Discord](https://img.shields.io/discord/1120067391443959930.svg?label=discord&labelColor=7289da&color=2c2f33&style=flat)](https://discord.gg/w9Pews8u) |
+| [![CI](https://github.com/Death-Knight-552/Light-Novels/actions/workflows/auto.yml/badge.svg)](https://github.com/Death-Knight-552/Light-Novels/actions/workflows/auto.yml) | [![Latest release](https://img.shields.io/github/release/Death-Knight-552/Light-Novels.svg?maxAge=3600&label=Download)](https://github.com/Death-Knight-552/Light-Novels/releases) | [![Discord](https://img.shields.io/discord/1120067391443959930.svg?label=discord&labelColor=7289da&color=2c2f33&style=flat)](https://discord.gg/w9Pews8u) |
 
 ## Screenshots
 
-...[![Discord](https://img.shields.io/discord/1120067392207327334.svg?label=discord&labelColor=7289da&color=2c2f33&style=flat)](https://discord.gg/w9Pews8u)
+..
 
 ## Features
 
@@ -28,6 +28,9 @@ You can add new novels to reading list, track status and maybe see recommendatio
   - [ ] Add different sorting method (by name, by status, etc).
   - [ ] Add search features ( not fuzzy search ).
   - [ ] Add filters such as genres, authors, etc.
+- [ ] Detailed information:
+  - [ ] Show details of light novels
+- [ ] Favorites and reading lists:
 
 ## Planned Features
 
@@ -57,6 +60,7 @@ It will take a long time but I plan to add a website for displaying such info as
 - Room Database as local database
 - Neon Tech as remote database
 - Retrofit
+- Imagekit as Image Server
 
 ## Download
 
