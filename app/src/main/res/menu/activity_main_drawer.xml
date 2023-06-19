@@ -16,5 +16,8 @@
             android:id="@+id/nav_browse"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Browse" />
+        <item
+            android:id="@+id/nav_sync"
+            android:title="Sync Database"/>
     </group>
 </menu>
