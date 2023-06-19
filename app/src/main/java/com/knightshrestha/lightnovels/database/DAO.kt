@@ -6,7 +6,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.knightshrestha.lightnovels.database.SeriesItem
 
 
 @Dao
@@ -33,5 +32,11 @@ abstract class DAO {
     abstract fun getAll(): LiveData<List<SeriesItem>>
     fun getAllItems(): LiveData<List<SeriesItem>> {
         return getAll()
+    }
+
+    @Query("SELECT * FROM `Series Items` WHERE seriesID IS :seriesId")
+    abstract suspend fun getOne(seriesId: Int): SeriesItem?
+    suspend fun getOneSeries(seriesId: Int): SeriesItem? {
+        return getOne(seriesId)
     }
 }

@@ -29,7 +29,7 @@ You can add new novels to reading list, track status and maybe see recommendatio
 - [ ] Search and browse functionality:
   - [x] Add light novels to Remote Database. ( Currently, 829 Records )
   - [x] Connect app to Remote Database
-  - [ ] Sync Local RoomDB and Remote Database.
+  - [x] Sync Local RoomDB and Remote Database.
   - [ ] Add different sorting method (by name, by status, etc).
   - [ ] Add search features ( not fuzzy search ).
   - [ ] Add filters such as genres, authors, etc.

@@ -15,6 +15,9 @@ class REPO (private val dao: DAO) {
         dao.insertWithTimestamp(seriesItem)
     }
 
+    suspend fun getOneSeries(seriesID: Int): SeriesItem? {
+        return dao.getOneSeries(seriesID)
+    }
 
 
 }
