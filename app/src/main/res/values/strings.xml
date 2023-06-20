@@ -14,4 +14,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fragment_sync_btn_sync_db">Sync databases</string>
     <string name="SyncFrag_Log_text">Fetching Data...</string>
+
+    <!-- Dashboard String Variable    -->
+    <string name="DashFrag_remote_count">%1$d Items in Remote Database</string>
+    <string name="DashFrag_local_count">%1$d Items in Local Database</string>
 </resources>

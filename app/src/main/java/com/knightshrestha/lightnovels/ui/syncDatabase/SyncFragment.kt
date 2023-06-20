@@ -13,6 +13,9 @@ import com.knightshrestha.lightnovels.databinding.FragmentSyncBinding
 import com.knightshrestha.lightnovels.remotedatabase.MyRepo
 import com.knightshrestha.lightnovels.remotedatabase.MyViewFactory
 import com.knightshrestha.lightnovels.remotedatabase.MyViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.launch
 
 class SyncFragment : Fragment() {
 
@@ -44,6 +47,7 @@ class SyncFragment : Fragment() {
 
             apiViewModel.neonData.observe(viewLifecycleOwner) {
                 if (it != null) {
+
                     for ((index, item) in it.SeriesItem_aggregate.nodes.withIndex()) {
                         binding.tvLogs.text = (index + 1).toString() + " / " + it.SeriesItem_aggregate.nodes.size.toString()
 
@@ -51,8 +55,9 @@ class SyncFragment : Fragment() {
                             ((index + 1).toDouble() / it.SeriesItem_aggregate.nodes.size * 100).toInt()
                         binding.tvRemoteTitle.text = item.title
 
-                        dbViewModel.getLocalSeries(item.seriesID)
-                        dbViewModel.specificBook.observe(viewLifecycleOwner) { localBook ->
+                        CoroutineScope(Main).launch {
+                            val localBook = dbViewModel.getLocalSeries(item.seriesID)
+
                             if (localBook != null) {
                                 binding.tvLocalTitle.text = localBook.title
                                 val titleCheck = item.title == localBook.title
@@ -94,8 +99,9 @@ class SyncFragment : Fragment() {
                                 )
                             }
                         }
-
-
+                        if ( index == it.SeriesItem_aggregate.nodes.size -1) {
+                            binding.tvLogs.text = "Sync Process Completed"
+                        }
                     }
                 }
             }

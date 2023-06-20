@@ -7,6 +7,10 @@ class REPO (private val dao: DAO) {
         return dao.getAllItems()
     }
 
+    fun getAllItemCount(): LiveData<ItemCount> {
+        return dao.getAllItemCount()
+    }
+
     suspend fun updateSeries(seriesItem: SeriesItem) {
         dao.updateWithTimestamp(seriesItem)
     }

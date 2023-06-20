@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.knightshrestha.lightnovels.R
 import com.knightshrestha.lightnovels.database.ViewModel
 import com.knightshrestha.lightnovels.databinding.FragmentDashboardBinding
 
@@ -28,11 +29,10 @@ class DashboardFragment : Fragment() {
 
         viewModel = ViewModelProvider(this)[ViewModel::class.java]
 
-        viewModel.allBooks.observe(viewLifecycleOwner) {
-            val remoteList = it
-            val localList = it.filter { it.isInLibrary }
-            binding.tvRemoteItemCount.text = remoteList.size.toString() + " Items in Remote Database"
-            binding.tvLocalItemCount.text = localList.size.toString() + " Items in Local Database"
+        viewModel.itemCount.observe(viewLifecycleOwner) {
+            binding.tvRemoteItemCount.text = resources.getString(R.string.DashFrag_remote_count, it.totalRows)
+
+            binding.tvLocalItemCount.text = resources.getString(R.string.DashFrag_local_count, it.inLibrary)
         }
 
         return root

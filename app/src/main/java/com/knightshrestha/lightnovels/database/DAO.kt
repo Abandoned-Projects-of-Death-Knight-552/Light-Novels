@@ -39,4 +39,11 @@ abstract class DAO {
     suspend fun getOneSeries(seriesId: Int): SeriesItem? {
         return getOne(seriesId)
     }
+
+    @Query("SELECT COUNT(*) AS totalRows, COUNT(CASE WHEN 'isInLibrary' = '1' THEN 2 END) AS inLibrary FROM `Series Items`")
+    abstract fun getItemCount(): LiveData<ItemCount>
+    fun getAllItemCount(): LiveData<ItemCount> {
+        return getItemCount()
+    }
+
 }
